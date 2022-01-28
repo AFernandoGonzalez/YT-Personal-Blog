@@ -1,0 +1,285 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+/* /////////////////////////////////////////////// */
+/* Custom Bootstrap ///////////////////////////// */
+/* Navbar */
+.navbar-collapse {
+    justify-content: end;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: white;
+}
+
+
+/* Footer */
+.footer {
+    /* margin: 1rem; */
+    background-color: black;
+    margin-top: 5rem;
+}
+.footer-container {
+    /* margin: 1rem; */
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.brand-info {
+    margin: 2rem 0;
+    /* text-align: left; */
+    padding: 2rem;
+}
+
+.brand-info p {
+    margin-bottom: 0rem;
+   
+}
+
+.social-media-contact {
+    margin: 2rem 0;
+    /* text-align: left; */
+    padding: 2rem;
+}
+
+.social-media-contact ul {
+    margin: 1rem 0;
+    padding-left: 0rem;
+    padding-inline-start: 0px;
+    
+
+    
+}
+
+.social-media-links {
+    color: white;
+    margin-right: 1rem;
+}
+
+.footer-copyright span {
+    font-size: 12px;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.step-links a{
+    color: black;
+    border: 1px solid black;
+    padding: .5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .2s ease-in-out;
+}
+
+.step-links a:hover {
+    background-color: black;
+    color: white;
+}
+
+.current {
+    margin: 0 1rem;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: black;
+    outline: 0;
+    box-shadow: none;
+}
+
+
+/* /////////////////////////////////////////////// */
+/* Blog Page ///////////////////////////// */
+.hero-section {
+    margin: 1rem;
+}
+
+.hero-post-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.post-image img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+
+}
+.hero-post-author img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-published {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-published span {
+    color: gray;
+}
+
+.post-title {
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.post-body p{
+    margin-bottom: .5rem;
+}
+
+
+.category {
+    border: 1px solid black;
+    padding: .2rem;
+    border-radius: 30px;
+}
+
+
+/* Single Post */
+
+.single-post-section {
+    /* margin: 1rem; */
+}
+
+.single-post-info{
+    text-align: left;
+    margin: 1rem;
+}
+
+.single-post-date {
+    color: gray;
+}
+
+.single-post-title {
+    font-weight: 900;
+}
+
+.single-post-image img {
+    width: 100%;
+    object-fit: contain;
+    /* border-radius: 10px; */
+}
+
+.single-post-body {
+    margin: 1rem;
+}
+
+/* /////////////////////////////////////////////// */
+/* Media Query ///////////////////////////// */
+@media screen and (min-width: 650px){
+    .info-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5rem;
+    }
+
+    .brand-info {
+        text-align: left;
+    }
+    .social-media-contact {
+        text-align: left;
+    }
+
+}
+
+
+
+
+/* /////////////////////////////////////////////// */
+/* Media Query ///////////////////////////// */
+@media screen and (min-width: 850px) {
+
+    .hero-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-container{
+        max-width: 850px;
+     
+    }
+
+    .top-post-info{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+
+    }
+
+    .top-info-container {
+        margin: 0 1rem;
+    }
+
+    /* All posts */
+
+    .posts-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        margin-top: 2rem;
+    }
+
+    .hero-post-info {
+        display: block;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+    
+    }
+    
+    .footer-container {
+        max-width: 850px;
+    }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

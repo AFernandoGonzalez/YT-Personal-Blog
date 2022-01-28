@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Blog Home {% endblock %}
+
+<!-- Your html goes bellow -->
+{% block content %}
+
+<section class="contact-section">
+    <h1>Contact Me</h1>
+    <div class="contact-container">
+        <!-- Form Style -->
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {% crispy form %}
+
+            <div class="contact-f-btn">
+                <button type="button" class="btn btn-outline-dark" type="submit" value="Submit">Send Message</button>
+            </div>
+        </form>
+        <!-- End Form Style -->
+    </div>
+</section>
+
+
+
+{% endblock%}

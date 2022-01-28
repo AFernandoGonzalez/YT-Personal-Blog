@@ -1,0 +1,102 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} Blog Home {% endblock %}
+
+<!-- Your html goes bellow -->
+{% block content %}
+
+
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="top-post-container">
+
+            <!-- single post -->
+            {% for p in post %}
+            <div class="top-post-info">
+                <div class="post-image">
+                    <img src="{{ p.image.url }}" alt="">
+                </div>
+                <div class="top-info-container">
+                    <div class="post-info">
+                        <div class="hero-post-author">
+                            <img src="{{ p.image.url }}" alt="">
+                            <span>{{ p.author }}</span>
+                        </div>
+                        <div class="post-published">
+                            <span>Published {{ p.created }}</span>
+                        </div>
+                    </div>
+                    <div class="post-body">
+                        <h4><a class="post-title" href="{% url 'blog:blog_detail' p.pk %}">{{ p.title }}</a></h4>
+                        <p>{{ p.body|safe|truncatewords:18 }}</p>
+                    </div>
+                    <div class="post-categories">
+                        {% for category in p.categories.all %}
+                        <span class="category">{{ category.title }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- post list -->
+        <div class="posts-container">
+
+            <!-- single post -->
+            {% for post in page_obj %}
+            <div class="hero-post-info">
+                <div class="post-image">
+                    <img src="{{ post.image.url }}" alt="">
+                </div>
+                <div>
+                    <div class="post-info">
+                        <div class="hero-post-author">
+                            <img src="{{ post.image.url }}" alt="">
+                            <span>{{ post.author }}</span>
+                        </div>
+                        <div class="post-published">
+                            <span>Published {{ post.created }}</span>
+                        </div>
+                    </div>
+                    <div class="post-body">
+                        <h4><a class="post-title" href="{% url 'blog:blog_detail' post.pk %}">{{ post.title }}</a></h4>
+                        <p>{{ post.body|safe|truncatewords:18 }}</p>
+                    </div>
+                    <div class="post-categories">
+                        {% for category in post.categories.all %}
+                        <span class="category">{{ category.title }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- pagination -->
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+        <!-- end of pagination -->
+    </div>
+    <!-- end post list -->
+
+</section>
+
+
+{% endblock%}

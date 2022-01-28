@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} Blog Detail Page {% endblock %}
+
+<!-- Your html goes bellow -->
+{% block content %}
+
+<section class="single-post-section">
+    <div class="single-post-container">
+        <div class="single-post-info">
+            <span class="single-post-date">{{ post.created }}</span>
+            <h1 class="single-post-title">{{ post.title }}</h1>
+            {% for category in post.categories.all %}
+            <span class="category">{{ category.title }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="single-post-image">
+            <img src="{{ post.image.url }}" alt="">
+        </div>
+
+        <div class="single-post-body">
+            <p>{{ post.body|safe }}</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+{% endblock%}
